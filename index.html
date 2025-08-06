@@ -1,18 +1,127 @@
-<h1 style="text-align:center; font-family: Arial, sans-serif; color: #2c3e50;">
-  Welcome to <span style="color:#e74c3c;">RAJAN AI BOT</span>
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAJAN AI BOT</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
-<p style="text-align:center; font-size: 18px; color: #34495e;">
-  The smartest way to automate your digital life. Powered by AI. Built for you.
-</p>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      background: linear-gradient(120deg, #000000, #1a1a1a, #000000);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      overflow: hidden;
+    }
 
-<div style="text-align:center; margin-top:20px;">
-  <a href="#get-started" style="background-color:#e74c3c; padding: 10px 20px; color:white; text-decoration:none; border-radius:5px; font-weight:bold;">
-    Get Started
-  </a>
-</div>
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
 
-<footer style="text-align:center; margin-top:50px; font-size:14px; color:gray;">
-  © 2025 RAJAN AI BOT. All Rights Reserved.
-</footer>
+    .candles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .candle {
+      position: absolute;
+      bottom: 0;
+      width: 4px;
+      height: 60px;
+      background: limegreen;
+      animation: flicker 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes flicker {
+      0% { height: 20px; opacity: 0.7; }
+      100% { height: 60px; opacity: 1; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 48px;
+      letter-spacing: 2px;
+      color: #00ffcc;
+      text-shadow: 2px 2px 10px #00ffcc;
+      animation: fadeIn 2s ease-out;
+    }
+
+    p {
+      font-size: 20px;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background-color: #00ffcc;
+      color: black;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00cc99;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="candles">
+    <!-- Generate 30 random animated candle lines -->
+    <script>
+      for (let i = 0; i < 30; i++) {
+        const candle = document.createElement('div');
+        candle.className = 'candle';
+        candle.style.left = Math.random() * 100 + '%';
+        candle.style.animationDuration = (Math.random() * 2 + 1) + 's';
+        candle.style.background = Math.random() > 0.5 ? 'limegreen' : 'red';
+        document.body.querySelector('.candles').appendChild(candle);
+      }
+    </script>
+  </div>
+
+  <div class="container">
+    <h1>RAJAN AI BOT</h1>
+    <p>The smartest way to automate your digital life. Powered by AI. Built for traders.</p>
+    <button class="btn">Get Started</button>
+  </div>
+
+  <footer>© 2025 RAJAN AI BOT. All Rights Reserved.</footer>
+</body>
+</html>
 
